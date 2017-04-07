@@ -1,0 +1,44 @@
+modal, intro-modal {
+    line-height: 300%;
+    text-align: center;
+    position: absolute;
+
+    .finalScoreModal, .introModal {
+        border: 1px solid gainsboro;
+        border-radius: 2%;
+        width: 46vh;
+        background-color: beige;
+        box-shadow: 10px 10px 10px dimgrey;
+
+        button {
+            background-color: burlywood;
+            text-shadow: coral;
+            font-family: inherit;
+            @include on-hover-shadow;
+        }
+    }
+    @include keyframes(fade-in) {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+    @include keyframes(fade-out) {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
+.ng-hide-remove {
+    @include animation( 'fade-in 0.3s');
+}
+.ng-hide{
+    @include animation( 'fade-out 0.3s');
+}

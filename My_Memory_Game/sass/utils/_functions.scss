@@ -1,0 +1,3 @@
+@function calculation-board-grid($cols, $board-width) {
+  @return ($board-width / $cols - 1vw)
+}

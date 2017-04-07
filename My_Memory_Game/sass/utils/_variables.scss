@@ -1,0 +1,17 @@
+//colors
+$gray: #777;
+$dime-gray: #696969;
+$light-gray: #C0C0C0;
+$background-base-green: #fbfdf9;
+$background-lighter-green: #f1f8ea;
+$background-light-green: #eaf4e0;
+$background-extra-light-green: #e3f1d6;
+$background-ultra-light-green: #ddeecc;
+
+//sizes
+$board-size-small: 23vw;
+$board-width-big: 48vw;
+$td-size-small: calculation-board-grid(4, $board-size-small);
+
+//fonts
+$main-font: 'Permanent Marker';

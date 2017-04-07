@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>My Memory Game</title>
+    <script src="js\includes\images.js"></script>
+    <script src="js\includes\Board.js"></script>
+    <script src="js\includes\SingleCell.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Permanent+Marker" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/directives/introModal.js" type="text/javascript"></script>
+    <script src="js/directives/modal.js" type="text/javascript"></script>
+    <script src="js/controllers/mainCtrl.js" type="text/javascript"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <header>
+        <h1>My Memory Game</h1>
+    </header>
+    <main>
+        <section>
+            <p>
+                Find pairs of images under the following tiles:
+            </p>
+            <div id="board" ng-class="{ 'small': boardClass == 'small', 'big': boardClass == 'big' }">
+              <div class="cell" ng-repeat="cell in cells track by $index" ng-click="discoverImage(cell, $index)">
+                <img ng-show="cell.discovered" ng-src={{cell.img}}>
+              </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h3>Clicks on two tiles to find two matching pictures</h3>
+                <div class="footer">
+                    <button id="resete" ng-click="reseteBoard()">Start New Game</button>
+                    <div>
+                        <span>Time: </span>
+                        <span id="time"><span ng-if="minutes<10">{{pad}}</span>{{minutes}}:<span ng-if="seconds<10">{{pad}}</span>{{seconds}}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <modal show="modalShown">
+        <h4 class="winner">
+            You {{result}}
+        </h4>
+    </modal>
+    <intro-modal ng-show="introModalShown">
+        <h4 class="winner">
+            Choose your board size:
+        </h4>
+        <button type="button" ng-click="chooseBoardSize(4, 4)">4X4 </button>
+        <button type="button" ng-click="chooseBoardSize(6, 6)">6X6 </button>
+    </intro-modal>
+</body>
+
+</html>

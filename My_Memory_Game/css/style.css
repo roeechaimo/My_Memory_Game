@@ -1,0 +1,126 @@
+body {
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 3px 3px #C0C0C0;
+  background: linear-gradient(#fbfdf9, #f1f8ea, #eaf4e0, #e3f1d6, #ddeecc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+html {
+  height: 100%;
+  width: 100%; }
+  html h1 {
+    font-size: 2vw; }
+  html p {
+    margin-top: 0; }
+  html img {
+    width: 0;
+    height: 0; }
+  html span {
+    width: 0px; }
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  section h3, section p {
+    font-size: 1vw;
+    text-align: center; }
+  section div#board.big {
+    max-width: 48vw;
+    height: auto; }
+  section div#board.small {
+    max-width: 23vw;
+    height: auto; }
+  section div#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 23vw; }
+    section div#board div.cell {
+      border: 1px solid #777;
+      border-collapse: collapse;
+      border-radius: 5%;
+      height: 4.75vw;
+      width: 4.75vw;
+      text-align: center;
+      margin: 2px;
+      box-shadow: 0 1px 3px 1px gray;
+      transition: 0.25s box-shadow; }
+      section div#board div.cell img {
+        width: inherit;
+        height: inherit; }
+      section div#board div.cell:hover {
+        box-shadow: 0 4px 8px 2px gray;
+        cursor: pointer; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 1; } }
+    section div#board .fade-in {
+      animation: fade-in 1s; }
+  section div.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    section div.footer button {
+      background-color: #C0C0C0;
+      text-shadow: coral;
+      font-family: inherit;
+      margin: 5vh;
+      box-shadow: 0 1px 3px 1px gray;
+      transition: 0.25s box-shadow; }
+      section div.footer button:hover {
+        box-shadow: 0 4px 8px 2px gray;
+        cursor: pointer; }
+    section div.footer span#time {
+      background: #fbfdf9;
+      border-radius: 2%;
+      width: 4.75vw;
+      display: inline-block;
+      text-align: center; }
+
+modal, intro-modal {
+  line-height: 300%;
+  text-align: center;
+  position: absolute; }
+  modal .finalScoreModal, modal .introModal, intro-modal .finalScoreModal, intro-modal .introModal {
+    border: 1px solid gainsboro;
+    border-radius: 2%;
+    width: 46vh;
+    background-color: beige;
+    box-shadow: 10px 10px 10px dimgrey; }
+    modal .finalScoreModal button, modal .introModal button, intro-modal .finalScoreModal button, intro-modal .introModal button {
+      background-color: burlywood;
+      text-shadow: coral;
+      font-family: inherit;
+      box-shadow: 0 1px 3px 1px gray;
+      transition: 0.25s box-shadow; }
+      modal .finalScoreModal button:hover, modal .introModal button:hover, intro-modal .finalScoreModal button:hover, intro-modal .introModal button:hover {
+        box-shadow: 0 4px 8px 2px gray;
+        cursor: pointer; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.ng-hide-remove {
+  animation: fade-in 0.3s; }
+
+.ng-hide {
+  animation: fade-out 0.3s; }
+
+/*# sourceMappingURL=style.css.map */
